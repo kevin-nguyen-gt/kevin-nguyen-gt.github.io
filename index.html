@@ -100,6 +100,7 @@
   .project figure { margin: 0; }
   .project figure img, .project figure video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--panel); display: block; }
   .project figure video.portrait { aspect-ratio: 3 / 4; max-width: 400px; margin: 0 auto; }
+  .project figure img.natural { aspect-ratio: auto; }
   .project figcaption { font-size: 0.875rem; color: var(--steel); margin-top: 10px; }
   .project h3 {
     font-size: 1.6rem; font-weight: 750; font-stretch: 112%; line-height: 1.15; margin: 0 0 10px;
@@ -210,7 +211,7 @@
           <p>A cold plate sits on a hot chip and carries heat away through coolant flowing in internal channels. I designed additively manufactured fin layouts to lower chip temperature without driving up pumping pressure, for the ASME K-16 / IEEE ITherm student cold plate design competition.</p>
           <dl class="titleblock">
             <div><dt>Role</dt><dd>Thermal/Fluids Research Intern, METTL</dd></div>
-            <div><dt>Dates</dt><dd>Aug 2025 – May 2026</dd></div>
+            <div><dt>Dates</dt><dd>May 2026 – present</dd></div>
             <div><dt>Tools</dt><dd>SolidWorks, ANSYS Fluent</dd></div>
             <div class="status"><dt>Status</dt><dd>Simulated; build and test in Spring 2027</dd></div>
           </dl>
@@ -225,21 +226,21 @@
 
       <article class="project" id="penetrometer">
         <figure>
-          <video class="portrait" src="images/penetrometer.mp4" poster="images/penetrometer.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Drop test: the 3D-printed penetrometer free-falls into a bucket of sand"></video>
-          <figcaption>Drop test: the penetrometer free-falls into sand while logging acceleration and force.</figcaption>
+          <img src="images/penetrometer.jpg" alt="Load cell mounted in the penetrometer nose, ESP32 wiring and USB-C charging port inside the body, a Bluetooth app showing drop-test results, and the assembled 3D-printed probe" loading="lazy">
+          <figcaption>Clockwise from top left: 50 kg load cell in the nose, ESP32 and USB-C charging inside the body, live Bluetooth readout from a drop (3.34 m/s peak), and the assembled probe.</figcaption>
         </figure>
         <div>
-          <h3>Low-cost penetrometer enclosure</h3>
-          <p>A free-fall penetrometer is dropped onto soil or sand; how quickly it slows down and how deep it goes reveal the ground's strength. Our team built a low-cost version for hard-to-reach sites; I designed the enclosure that packages its sensors and electronics.</p>
+          <h3>Low-cost free-fall penetrometer</h3>
+          <p>A free-fall penetrometer is dropped onto soil or sand; how quickly it slows down and how deep it goes reveal the ground's strength. On a three-person team, I helped build a low-cost version for hard-to-reach sites: I designed its enclosure, packaged the sensors and electronics, and processed the test data.</p>
           <dl class="titleblock">
             <div><dt>Role</dt><dd>Mechanical Design Researcher</dd></div>
             <div><dt>Dates</dt><dd>Aug 2025 – May 2026</dd></div>
-            <div><dt>Tools</dt><dd>SolidWorks, ESP32, MATLAB</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, ESP32, load cell, IMU, MATLAB</dd></div>
             <div class="status"><dt>Status</dt><dd>Built and field tested</dd></div>
           </dl>
           <ul class="results">
-            <li><strong>3 printed revisions</strong>, ending in a modular four-section resin design</li>
-            <li><strong>100+ tests</strong> at 2–6 in depth with a 50 kg load cell, ICM-20948 IMU, and Bluetooth logging</li>
+            <li><strong>3 printed revisions</strong> across multiple materials, ending in a modular four-section resin enclosure</li>
+            <li><strong>100+ drop tests</strong> in soil and sand at 2–6 in depth, with 4.5 kHz IMU data processed in MATLAB</li>
             <li><strong>Under 7%</strong> average load-cell deviation; projected system cost cut by <strong>over $400</strong></li>
           </ul>
         </div>
@@ -255,7 +256,7 @@
           <p>An autonomous robot that completes five timed tasks. I designed and built its drivetrain, actuation, and manipulation subsystems and wired them to Arduino controls.</p>
           <dl class="titleblock">
             <div><dt>Role</dt><dd>Mechanical Design &amp; Mechatronics</dd></div>
-            <div><dt>Dates</dt><dd>2025 – May 2026</dd></div>
+            <div><dt>Dates</dt><dd>May 2026</dd></div>
             <div><dt>Tools</dt><dd>SolidWorks, Arduino C++, lidar</dd></div>
             <div class="status"><dt>Status</dt><dd>Built and competed</dd></div>
           </dl>
@@ -269,12 +270,12 @@
 
       <article class="project" id="cooling-dock">
         <figure>
-          <img src="images/cooling-dock.jpg" alt="3D-printed laptop cooling dock with two 120 mm fans and an OLED display" loading="lazy">
-          <figcaption>The dock under a 16-inch laptop, OLED showing live temperature.</figcaption>
+          <img class="natural" src="images/cooling-dock.jpg" alt="3D-printed laptop cooling dock with glowing RGB edge lighting, an OLED showing 37.81 C against a 28.20 C setpoint, and a rotary control knob" loading="lazy">
+          <figcaption>The dock under a 16-inch laptop: the OLED shows live temperature against the setpoint, adjusted with the rotary knob.</figcaption>
         </figure>
         <div>
-          <h3>Smart laptop cooling dock</h3>
-          <p>A personal project: a 3D-printed dock for 16-inch laptops with two 120 mm fans that speed up based on measured temperature, plus an OLED display and rotary-encoder controls.</p>
+          <h3>Smart RGB laptop cooling dock</h3>
+          <p>A personal project: a 3D-printed dock for 16-inch laptops with two 120 mm fans that speed up based on measured temperature, plus an OLED display, rotary-encoder controls, and RGB edge lighting.</p>
           <dl class="titleblock">
             <div><dt>Role</dt><dd>Solo project</dd></div>
             <div><dt>Dates</dt><dd>Aug 2026</dd></div>
