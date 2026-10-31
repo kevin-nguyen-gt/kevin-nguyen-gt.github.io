@@ -98,7 +98,7 @@
   .project:first-of-type { border-top: 0; padding-top: 0; }
   .project:nth-of-type(even) figure { order: 2; }
   .project figure { margin: 0; }
-  .project figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--panel); }
+  .project figure img, .project figure video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--panel); display: block; }
   .project figcaption { font-size: 0.875rem; color: var(--steel); margin-top: 10px; }
   .project h3 {
     font-size: 1.6rem; font-weight: 750; font-stretch: 112%; line-height: 1.15; margin: 0 0 10px;
@@ -246,8 +246,8 @@
 
       <article class="project" id="robot">
         <figure>
-          <img src="images/robot.jpg" alt="Autonomous competition robot with drivetrain, actuation, and manipulation subsystems" loading="lazy">
-          <figcaption>Competition robot in its 12 × 18 × 24 in envelope.</figcaption>
+          <video src="images/robot.mp4" poster="images/robot.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Autonomous competition robot driving to the center of the arena and deploying its arm during a competition run"></video>
+          <figcaption>Competition run: the robot drives to the center tower and deploys its arm.</figcaption>
         </figure>
         <div>
           <h3>Autonomous competition robot</h3>
