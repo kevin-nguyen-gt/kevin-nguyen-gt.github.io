@@ -99,6 +99,7 @@
   .project:nth-of-type(even) figure { order: 2; }
   .project figure { margin: 0; }
   .project figure img, .project figure video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--panel); display: block; }
+  .project figure video.portrait { aspect-ratio: 3 / 4; max-width: 400px; margin: 0 auto; }
   .project figcaption { font-size: 0.875rem; color: var(--steel); margin-top: 10px; }
   .project h3 {
     font-size: 1.6rem; font-weight: 750; font-stretch: 112%; line-height: 1.15; margin: 0 0 10px;
@@ -188,8 +189,8 @@
         </div>
       </div>
       <figure>
-        <img src="images/hero.jpg" alt="ANSYS Fluent temperature contour of a liquid cold plate">
-        <figcaption>Coolant temperature through one of my cold-plate fin layouts, ANSYS Fluent.</figcaption>
+        <img src="images/hero.jpg" alt="ANSYS Fluent temperature contour on the heated base of a pin-fin liquid cold plate">
+        <figcaption>Temperature on the heated base of a pin-fin cold plate I'm modeling in ANSYS Fluent: coolest under the dense pins, hottest at the sparse edges.</figcaption>
       </figure>
     </div>
   </section>
@@ -201,8 +202,8 @@
 
       <article class="project" id="cold-plate">
         <figure>
-          <img src="images/cold-plate.jpg" alt="SolidWorks render of an additively manufactured liquid cold plate with internal fins" loading="lazy">
-          <figcaption>One of five cold-plate geometries, SolidWorks.</figcaption>
+          <img src="images/cold-plate.jpg" alt="Tetrahedral CFD mesh of a copper cold plate and its coolant volume with inlet and outlet pipes" loading="lazy">
+          <figcaption>798k-element mesh of the copper plate and coolant volume, ANSYS Fluent.</figcaption>
         </figure>
         <div>
           <h3>Liquid cold plates for chip cooling</h3>
@@ -224,12 +225,12 @@
 
       <article class="project" id="penetrometer">
         <figure>
-          <img src="images/penetrometer.jpg" alt="3D-printed resin penetrometer enclosure housing a load cell, IMU, and ESP32" loading="lazy">
-          <figcaption>Final four-section resin enclosure.</figcaption>
+          <video class="portrait" src="images/penetrometer.mp4" poster="images/penetrometer.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Drop test: the 3D-printed penetrometer free-falls into a bucket of sand"></video>
+          <figcaption>Drop test: the penetrometer free-falls into sand while logging acceleration and force.</figcaption>
         </figure>
         <div>
           <h3>Low-cost penetrometer enclosure</h3>
-          <p>A penetrometer measures ground properties by driving a probe into soil or sand. Our team built a low-cost version for hard-to-reach sites; I designed the enclosure that packages its sensors and electronics.</p>
+          <p>A free-fall penetrometer is dropped onto soil or sand; how quickly it slows down and how deep it goes reveal the ground's strength. Our team built a low-cost version for hard-to-reach sites; I designed the enclosure that packages its sensors and electronics.</p>
           <dl class="titleblock">
             <div><dt>Role</dt><dd>Mechanical Design Researcher</dd></div>
             <div><dt>Dates</dt><dd>Aug 2025 – May 2026</dd></div>
@@ -290,7 +291,7 @@
 
       <h2 style="margin-top:56px; font-size:1.5rem;">Concept work</h2>
       <div class="concept">
-        <img src="images/stair-device.jpg" alt="CAD assembly of a conceptual stair-climbing device" loading="lazy">
+        <img src="images/stair-device.jpg" alt="SolidWorks assembly of a stair-climbing chair on tri-wheel belt tracks" loading="lazy">
         <div>
           <h3>Assistive stair-climbing device</h3>
           <p>A CAD-only design project taking a product through the full engineering design process. Working in a team of three, I designed 5+ of the 24+ parts across its three subsystems. Aug – Dec 2025.</p>
