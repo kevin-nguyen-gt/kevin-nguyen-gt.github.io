@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin Nguyen | Mechanical Engineering</title>
+<meta name="description" content="Mechanical engineering student at Georgia Tech: liquid cooling, race-car suspension, and mechatronic hardware.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F7;
+    --panel: #E3E8EB;
+    --ink: #17232E;
+    --steel: #556572;
+    --rule: #C3CCD2;
+    --gold: #B3A369;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #121A21;
+      --panel: #1C2730;
+      --ink: #E6EBEE;
+      --steel: #97A6B1;
+      --rule: #2E3C47;
+      --gold: #C9B97E;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  a { color: inherit; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header.site {
+    border-bottom: 1px solid var(--rule);
+  }
+  header.site .wrap {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-top: 18px; padding-bottom: 18px; gap: 16px; flex-wrap: wrap;
+  }
+  .mark { font-weight: 700; font-stretch: 112%; text-decoration: none; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; }
+  nav a { text-decoration: none; color: var(--steel); }
+  nav a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 72px 0 56px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(2.6rem, 6vw, 4.6rem);
+    line-height: 1.02;
+    font-weight: 800;
+    font-stretch: 125%;
+    letter-spacing: -0.01em;
+  }
+  .hero p.intro { max-width: 34em; color: var(--steel); font-size: 1.2rem; margin: 22px 0 28px; }
+  .hero .links { display: flex; gap: 14px; flex-wrap: wrap; }
+  .button {
+    display: inline-block; padding: 11px 20px; border: 2px solid var(--ink);
+    text-decoration: none; font-weight: 600;
+  }
+  .button.primary { background: var(--ink); color: var(--paper); }
+  .button:hover { border-color: var(--gold); }
+  .hero figure { margin: 0; }
+  .hero figure img { aspect-ratio: 4 / 3; object-fit: cover; width: 100%; background: var(--panel); border-bottom: 6px solid var(--gold); }
+  .hero figcaption { font-size: 0.875rem; color: var(--steel); margin-top: 10px; }
+
+  /* Section headings */
+  section.block { padding: 64px 0; border-top: 1px solid var(--rule); }
+  h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 750; font-stretch: 118%;
+    margin: 0 0 8px; line-height: 1.1;
+  }
+  .section-note { color: var(--steel); margin: 0 0 40px; max-width: 40em; }
+
+  /* Projects */
+  .project {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 44px;
+    padding: 44px 0; border-top: 1px solid var(--rule);
+  }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project:nth-of-type(even) figure { order: 2; }
+  .project figure { margin: 0; }
+  .project figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--panel); }
+  .project figcaption { font-size: 0.875rem; color: var(--steel); margin-top: 10px; }
+  .project h3 {
+    font-size: 1.6rem; font-weight: 750; font-stretch: 112%; line-height: 1.15; margin: 0 0 10px;
+  }
+  .project p { margin: 0 0 18px; max-width: 36em; }
+
+  /* Drawing title block */
+  .titleblock {
+    display: grid; grid-template-columns: 1fr 1fr; margin: 0 0 20px;
+    border: 1.5px solid var(--ink);
+  }
+  .titleblock div { padding: 8px 12px; border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .titleblock div:nth-child(2n) { border-right: 0; }
+  .titleblock div:nth-last-child(-n+2) { border-bottom: 0; }
+  .titleblock dt { font-size: 0.75rem; color: var(--steel); }
+  .titleblock dd { margin: 0; font-weight: 600; font-size: 0.95rem; }
+  .titleblock .status dd { color: var(--ink); }
+  .titleblock .status { background: var(--panel); }
+
+  .results { list-style: none; padding: 0; margin: 0 0 18px; }
+  .results li { padding: 7px 0 7px 16px; border-left: 3px solid var(--gold); margin-bottom: 6px; }
+  .results strong { font-stretch: 112%; }
+
+  /* Concept work */
+  .concept {
+    display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start;
+    padding: 24px; background: var(--panel);
+  }
+  .concept img { aspect-ratio: 1; object-fit: cover; width: 100%; background: var(--paper); }
+  .concept h3 { margin: 0 0 6px; font-size: 1.25rem; font-stretch: 112%; }
+  .concept p { margin: 0; max-width: 40em; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; }
+  .about p { max-width: 36em; margin: 0 0 16px; }
+  .skills dt { font-weight: 700; margin-top: 14px; }
+  .skills dt:first-child { margin-top: 0; }
+  .skills dd { margin: 2px 0 0; color: var(--steel); }
+
+  /* Contact */
+  footer { padding: 64px 0 80px; border-top: 1px solid var(--rule); }
+  footer h2 { margin-bottom: 14px; }
+  footer p { color: var(--steel); margin: 0 0 22px; }
+  .contact { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  @media (max-width: 820px) {
+    .hero .wrap, .project, .about { grid-template-columns: 1fr; gap: 28px; }
+    .project:nth-of-type(even) figure { order: 0; }
+    .concept { grid-template-columns: 1fr; }
+    .concept img { max-width: 220px; }
+    .hero { padding: 48px 0 40px; }
+  }
+  @media (max-width: 480px) {
+    .titleblock { grid-template-columns: 1fr; }
+    .titleblock div { border-right: 0; }
+    .titleblock div:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .titleblock div:last-child { border-bottom: 0; }
+    nav ul { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="mark" href="#top">Kevin Nguyen</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="resume.pdf">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Kevin Nguyen</h1>
+        <p class="intro">Mechanical engineering student at Georgia Tech. I design liquid cooling for chips, rear suspension for a Formula SAE electric car, and sensor-packed hardware, then check it with simulation and testing. Looking for Summer 2027 internships.</p>
+        <div class="links">
+          <a class="button primary" href="#work">See my projects</a>
+          <a class="button" href="resume.pdf">Download resume</a>
+        </div>
+      </div>
+      <figure>
+        <img src="images/hero.jpg" alt="ANSYS Fluent temperature contour of a liquid cold plate">
+        <figcaption>Coolant temperature through one of my cold-plate fin layouts, ANSYS Fluent.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <p class="section-note">Each project lists what I was responsible for, the tools I used, and where it stands today.</p>
+
+      <article class="project" id="cold-plate">
+        <figure>
+          <img src="images/cold-plate.jpg" alt="SolidWorks render of an additively manufactured liquid cold plate with internal fins" loading="lazy">
+          <figcaption>One of five cold-plate geometries, SolidWorks.</figcaption>
+        </figure>
+        <div>
+          <h3>Liquid cold plates for chip cooling</h3>
+          <p>A cold plate sits on a hot chip and carries heat away through coolant flowing in internal channels. I designed additively manufactured fin layouts to lower chip temperature without driving up pumping pressure, for the ASME K-16 / IEEE ITherm student cold plate design competition.</p>
+          <dl class="titleblock">
+            <div><dt>Role</dt><dd>Thermal/Fluids Research Intern, METTL</dd></div>
+            <div><dt>Dates</dt><dd>Aug 2025 – May 2026</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, ANSYS Fluent</dd></div>
+            <div class="status"><dt>Status</dt><dd>Simulated; build and test in Spring 2027</dd></div>
+          </dl>
+          <ul class="results">
+            <li><strong>5 geometries, 25 CFD runs</strong> of conjugate heat transfer and coolant flow</li>
+            <li><strong>3.5 °C lower</strong> simulated peak chip temperature vs. baseline</li>
+            <li><strong>8% lower</strong> thermal resistance and <strong>15% lower</strong> pressure drop</li>
+            <li><strong>Within 0.6 °C</strong> between fine meshes in the mesh-refinement check</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="suspension">
+        <figure>
+          <img src="images/suspension.jpg" alt="CATIA model of the HT04 rear suspension and chassis" loading="lazy">
+          <figcaption>HT04 rear suspension and rear bay, CATIA.</figcaption>
+        </figure>
+        <div>
+          <h3>HT04 rear suspension, HyTech Racing</h3>
+          <p>I developed the rear-suspension geometry for Georgia Tech's Formula SAE electric car, lowering the car and fitting a simpler 5:1 final drive while keeping control arms, pushrods, and dampers clear of the chassis and drivetrain.</p>
+          <dl class="titleblock">
+            <div><dt>Role</dt><dd>Suspension Team Member</dd></div>
+            <div><dt>Dates</dt><dd>Aug 2025 – present</dd></div>
+            <div><dt>Tools</dt><dd>CATIA, MATLAB</dd></div>
+            <div class="status"><dt>Status</dt><dd>In design for HT04</dd></div>
+          </dl>
+          <ul class="results">
+            <li><strong>50 → 27 mm</strong> ground clearance (25 mm competition minimum)</li>
+            <li><strong>35 → 52 mm</strong> rear roll-center height, shifting rear load transfer ~4% toward the oversteer target</li>
+            <li><strong>~2.5 kg removed</strong> by moving the differential ~40 mm forward and widening the bay for a 5:1 sprocket in place of planetary reduction</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="penetrometer">
+        <figure>
+          <img src="images/penetrometer.jpg" alt="3D-printed resin penetrometer enclosure housing a load cell, IMU, and ESP32" loading="lazy">
+          <figcaption>Final four-section resin enclosure.</figcaption>
+        </figure>
+        <div>
+          <h3>Low-cost penetrometer enclosure</h3>
+          <p>A penetrometer measures ground properties by driving a probe into soil or sand. Our team built a low-cost version for hard-to-reach sites; I designed the enclosure that packages its sensors and electronics.</p>
+          <dl class="titleblock">
+            <div><dt>Role</dt><dd>Mechanical Design Researcher</dd></div>
+            <div><dt>Dates</dt><dd>Aug 2025 – May 2026</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, ESP32, MATLAB</dd></div>
+            <div class="status"><dt>Status</dt><dd>Built and field tested</dd></div>
+          </dl>
+          <ul class="results">
+            <li><strong>3 printed revisions</strong>, ending in a modular four-section resin design</li>
+            <li><strong>100+ tests</strong> at 2–6 in depth with a 50 kg load cell, ICM-20948 IMU, and Bluetooth logging</li>
+            <li><strong>Under 7%</strong> average load-cell deviation; projected system cost cut by <strong>over $400</strong></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="robot">
+        <figure>
+          <img src="images/robot.jpg" alt="Autonomous competition robot with drivetrain, actuation, and manipulation subsystems" loading="lazy">
+          <figcaption>Competition robot in its 12 × 18 × 24 in envelope.</figcaption>
+        </figure>
+        <div>
+          <h3>Autonomous competition robot</h3>
+          <p>An autonomous robot that completes five timed tasks. I designed and built its drivetrain, actuation, and manipulation subsystems and wired them to Arduino controls.</p>
+          <dl class="titleblock">
+            <div><dt>Role</dt><dd>Mechanical Design &amp; Mechatronics</dd></div>
+            <div><dt>Dates</dt><dd>2025 – May 2026</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, Arduino C++, lidar</dd></div>
+            <div class="status"><dt>Status</dt><dd>Built and competed</dd></div>
+          </dl>
+          <ul class="results">
+            <li><strong>3 concepts per subsystem</strong>, chosen with a House of Quality of 30+ requirements</li>
+            <li><strong>10+ custom parts</strong> made by 3D printing, laser cutting, and mill/lathe work</li>
+            <li><strong>30% → 80%</strong> task completion and <strong>33% faster</strong> cycle time after testing</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="project" id="cooling-dock">
+        <figure>
+          <img src="images/cooling-dock.jpg" alt="3D-printed laptop cooling dock with two 120 mm fans and an OLED display" loading="lazy">
+          <figcaption>The dock under a 16-inch laptop, OLED showing live temperature.</figcaption>
+        </figure>
+        <div>
+          <h3>Smart laptop cooling dock</h3>
+          <p>A personal project: a 3D-printed dock for 16-inch laptops with two 120 mm fans that speed up based on measured temperature, plus an OLED display and rotary-encoder controls.</p>
+          <dl class="titleblock">
+            <div><dt>Role</dt><dd>Solo project</dd></div>
+            <div><dt>Dates</dt><dd>Aug 2026</dd></div>
+            <div><dt>Tools</dt><dd>SolidWorks, STM32, MATLAB</dd></div>
+            <div class="status"><dt>Status</dt><dd>Built and in daily use</dd></div>
+          </dl>
+          <ul class="results">
+            <li><strong>6 °C lower</strong> peak temperature under gaming load (35.9 °C to ~30 °C)</li>
+            <li><strong>3 fan modes</strong> (manual, fixed, closed-loop PWM) tuned in MATLAB</li>
+            <li><strong>4-part print</strong> designed for assembly, with removable mounts and cable routing</li>
+          </ul>
+        </div>
+      </article>
+
+      <h2 style="margin-top:56px; font-size:1.5rem;">Concept work</h2>
+      <div class="concept">
+        <img src="images/stair-device.jpg" alt="CAD assembly of a conceptual stair-climbing device" loading="lazy">
+        <div>
+          <h3>Assistive stair-climbing device</h3>
+          <p>A CAD-only design project taking a product through the full engineering design process. Working in a team of three, I designed 5+ of the 24+ parts across its three subsystems. Aug – Dec 2025.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div>
+        <h2>About</h2>
+        <p>I'm a mechanical engineering student at Georgia Tech. Most of my work sits where mechanical design meets heat, motion, or electronics: cooling hardware in the lab, suspension on the race team, and sensor and control projects on my own time.</p>
+        <p>Outside of engineering I tutor SolidWorks and engineering drawings at KNACK and co-direct sponsorship for the Vietnamese Student Association, where I helped raise about $15,000 for our Moon Festival.</p>
+      </div>
+      <dl class="skills">
+        <dt>CAD &amp; design</dt><dd>SolidWorks, CATIA, GD&amp;T, engineering drawings, DFA</dd>
+        <dt>Simulation &amp; thermal</dt><dd>ANSYS Fluent (CFD), FEA, conjugate heat transfer, liquid cooling</dd>
+        <dt>Analysis</dt><dd>MATLAB, Python, Excel, suspension kinematics</dd>
+        <dt>Mechatronics</dt><dd>STM32, ESP32, Arduino C/C++, sensors, closed-loop PWM control</dd>
+        <dt>Fabrication</dt><dd>FDM and resin printing, laser cutting, mill and lathe, soldering</dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <p>I'm looking for mechanical, thermal, and design internships for Summer 2027.</p>
+    <div class="contact">
+      <a class="button primary" href="mailto:knguyen621@gatech.edu">Email me</a>
+      <a class="button" href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
+      <a class="button" href="resume.pdf">Resume</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
